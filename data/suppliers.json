@@ -1,0 +1,63 @@
+[
+    {
+      "farmer_id": 1,
+      "name": "John Doe",
+      "contact": "123-456-7890",
+      "location": "Farmville"
+    },
+    {
+      "farmer_id": 2,
+      "name": "Jane Smith",
+      "contact": "987-654-3210",
+      "location": "Greentown"
+    },
+    {
+      "farmer_id": 3,
+      "name": "Robert Brown",
+      "contact": "555-234-5678",
+      "location": "Blueberry Hills"
+    },
+    {
+      "farmer_id": 4,
+      "name": "Emily Davis",
+      "contact": "456-789-1234",
+      "location": "Sunny Farms"
+    },
+    {
+      "farmer_id": 5,
+      "name": "Michael Wilson",
+      "contact": "321-654-9870",
+      "location": "Berry Fields"
+    },
+    {
+      "farmer_id": 6,
+      "name": "Sarah Johnson",
+      "contact": "234-567-8901",
+      "location": "Harvest Valley"
+    },
+    {
+      "farmer_id": 7,
+      "name": "David Lee",
+      "contact": "678-123-4567",
+      "location": "Fruit Grove"
+    },
+    {
+      "farmer_id": 8,
+      "name": "Laura Martinez",
+      "contact": "890-123-4567",
+      "location": "Green Pastures"
+    },
+    {
+      "farmer_id": 9,
+      "name": "James Taylor",
+      "contact": "456-234-5678",
+      "location": "Golden Fields"
+    },
+    {
+      "farmer_id": 10,
+      "name": "Olivia Harris",
+      "contact": "567-890-1234",
+      "location": "Organic Acres"
+    }
+  ]
+  

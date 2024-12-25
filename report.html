@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Blueberry Factory Report</h1>
+    </header>
+
+    <form id="generate-report-form">
+        <label for="time-interval">Select Time Interval:</label>
+        <select name="time-interval" id="time-interval">
+            <option value="all-time">All Time</option>
+            <option value="last-year">Last year</option>
+            <option value="last-6-months">Last 6 Months</option>
+        </select>
+        <button type="submit">Generate Report</button>
+    </form>
+    <div>
+        <h2>Report</h2>
+        <h3 id="report-income">Total Income: </h3>
+        <h3 id="report-expense">Total Expense: </h3>
+        <h3 id="report-tax">Tax applied: </h3>
+        <h3 id="report-profit">Net Profit: </h3>
+        <h3 id="report-products">Products Sold: </h3>
+
+        <table id="report-sold-table">
+            <thead>
+                <th>Small (0.1kg)</th>
+                <th>Medium (0.25kg)</th>
+                <th>Large (0.5kg)</th>
+                <th>Extra Large (1kg)</th>
+                <th>Family Pack (2kg)</th>
+                <th>Bulk Pack (5kg)</th>
+                <th>Premium</th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <h3 id="report-stock">Stock: </h3>
+
+        <table id="report-remain-table">
+            <thead>
+                <th>Small (0.1kg)</th>
+                <th>Medium (0.25kg)</th>
+                <th>Large (0.5kg)</th>
+                <th>Extra Large (1kg)</th>
+                <th>Family Pack (2kg)</th>
+                <th>Bulk Pack (5kg)</th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>
+
+    
+</body>
+</html>

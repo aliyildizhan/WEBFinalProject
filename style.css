@@ -1,0 +1,147 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Style */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Header Bar */
+.bar {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.bar button {
+    background-color: #357ab7;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.bar button:hover {
+    background-color: #285a8e;
+}
+
+.bar h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+/* Div Style */
+div {
+    margin: 20px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Style */
+form {
+    display: grid;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #357ab7;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #357ab7;
+    color: white;
+    cursor: pointer;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Search Input Style */
+#supplier-search-input, #sale-search-input {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Financial Analysis Style */
+#financial h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+}
+
+button#show-unit-sold {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button#show-unit-sold:hover {
+    background-color: red;
+}
+

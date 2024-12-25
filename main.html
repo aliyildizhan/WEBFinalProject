@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Blueberry Factory Management System</title>
+</head>
+<body>
+    <div class="bar">
+        <button onclick="document.location='#suppliers'">Supplier</button>
+        <button onclick="document.location='#purchases'">Purchases</button>
+        <button onclick="document.location='#categories'">Categories</button>
+        <button onclick="document.location='#sales'">Sales</button>
+        <button onclick="document.location='#financial'">Financial</button>
+        <button onclick="window.open('report.html', '_blank')">Report</button>
+
+        <h1>Blueberry Factory Management System</h1>
+    </div>
+
+    <div id="suppliers">
+        <h2>Supplier Module</h2>
+
+        <form id="supplier-form">
+            
+            <label for="supplier-name">Supplier Name:</label>
+            <input type="text" id="supplier-name" name="supplier-name" required>
+
+            <label for="supplier-contact">Supplier Contact:</label>
+            <input type="text" id="supplier-contact" name="supplier-contact" required>
+
+            <label for="supplier-location">Supplier Location:</label>
+            <input type="text" id="supplier-location" name="supplier-location" required>
+
+            <button type="submit">Add Supplier</button>
+        </form>
+        <input type="text" id="supplier-search-input" onkeyup="searchSupplier()" placeholder="Search for names or locations">
+
+        <table id="suppliers-table">
+            <thead>
+                <tr>
+                    <th>Supplier ID</th>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>
+    
+    <!--Purchase Addition-->
+    <div id="purchases">
+        <h2>Purchases</h2>
+        <form id="purchase-form">
+            
+            <label for="farmer-id">Farmer ID:</label>
+            <input type="number" id="farmer-id" name="farmer-id" required>
+
+            <label for="purchase-date">Date:</label>
+            <input type="date" id="purchase-date" name="purchase-date" required>
+
+            <label for="purchase-quantity">Quantity(Kg):</label>
+            <input type="number" step="0.001" min="0.001" id="purchase-quantity" name="purchase-quantity" required>
+
+            <label for="purchase-price">Price Per Kg($):</label>
+            <input type="number" step="0.001" min="0.001" id="purchase-price" name="purchase-price" required>
+
+            <button type="submit">Add Purchase</button>
+        </form>
+
+        <table id="purchases-table">
+            <thead>
+                <tr>
+                    <th onclick="sortPurchaseTable(0)">Purchase ID</th>
+                    <th onclick="sortPurchaseTable(1)">Farmer ID</th>
+                    <th onclick="sortPurchaseTable(2)">Date</th>
+                    <th onclick="sortPurchaseTable(3)">Quantity</th>
+                    <th onclick="sortPurchaseTable(4)">Price Per Kg</th>
+                    <th onclick="sortPurchaseTable(5)">Total Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="categories">
+        <h2>Categorization Module</h2>
+
+        <form id="category-form">
+            <label for="category-select">Select Category:</label>
+            <select name="category-select" id="category-select">
+                <option value="small">Small (0.1kg)</option>
+                <option value="medium">Medium (0.25kg)</option>
+                <option value="large">Large (0.5kg)</option>
+                <option value="extra">Extra Large (1kg)</option>
+                <option value="family">Family Pack (2kg)</option>
+                <option value="bulk">Bulk Pack (5kg)</option>
+            </select>
+            <label for="category-number">Select Number of Category:</label>
+            <input type="number" min="1" id="category-number" name="category-number" required>
+            <button type="submit">Add Category</button>
+        </form>
+        <button onclick="setPrice()">Set Category Prices</button>
+
+        <table id="categories-table">
+            <thead>
+                <th>Small (0.1kg)</th>
+                <th>Medium (0.25kg)</th>
+                <th>Large (0.5kg)</th>
+                <th>Extra Large (1kg)</th>
+                <th>Family Pack (2kg)</th>
+                <th>Bulk Pack (5kg)</th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div id="sales">
+        <h2>Sales Module</h2>
+
+        <form id="sale-form">
+            <label for="sale-date">Date:</label>
+            <input type="date" id="sale-date" name="sale-date" required>
+
+            <label for="sale-name">Name:</label>
+            <input type="text" id="sale-name" name="sale-name" required>
+
+            <label for="sale-contact">Contact:</label>
+            <input type="text" id="sale-contact" name="sale-contact" required>
+
+            <label for="sale-address">Address:</label>
+            <input type="text" id="sale-address" name="sale-address" required>
+
+            <label for="sale-category">Category:</label>
+            <select name="sale-category" id="sale-category">
+                <option value="Small">Small (0.1kg)</option>
+                <option value="Medium">Medium (0.25kg)</option>
+                <option value="Large">Large (0.5kg)</option>
+                <option value="Extra Large">Extra Large (1kg)</option>
+                <option value="Family Pack">Family Pack (2kg)</option>
+                <option value="Bulk Pack">Bulk Pack (5kg)</option>
+                <option value="Premium">Premium (7$ per Kg)</option>
+            </select>
+
+            <label for="sale-quantity">Quantity:</label>
+            <input type="number" min="1" id="sale-quantity" name="sale-quantity" required>
+
+            <button type="submit">Add Sale</button>
+        </form>
+        <input type="text" id="sale-search-input" onkeyup="searchSale()" placeholder="Search for names or addresses">
+
+        <button id="show-unit-sold" onclick="totalUnitSold()">Total Unit Sold for Each Category</button>
+
+        <table id="sales-table">
+            <thead>
+                <th onclick="sortSaleTable(0)">Order ID</th>
+                <th onclick="sortSaleTable(1)">Date</th>
+                <th onclick="sortSaleTable(2)">Name</th>
+                <th onclick="sortSaleTable(3)">Contact</th>
+                <th onclick="sortSaleTable(4)">Address</th>
+                <th onclick="sortSaleTable(5)">Category</th>
+                <th onclick="sortSaleTable(6)">Quantity</th>
+                <th onclick="sortSaleTable(7)">Total Price</th>
+                <th onclick="sortSaleTable(8)">Order Status</th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="financial">
+        <h2>Financial Analysis Module</h2>
+        <h3 id="total-berry">Total Berry: 142.30 Kg</h3>
+
+        <h3 id="total-income">Total Income: 7789.5$</h3>
+        <h3 id="total-expense">Total Expense: 5597.5$</h3>
+        <form id="tax-rate-form">
+            <label for="tax-rate">Enter a tax rate: </label>
+            <input type="number" min="0" step="0.001" id="tax-rate" required>
+            <button type="submit">Apply Tax Rate</button>
+        </form>
+        <h3 id="net-profit">Net Profit: </h3>
+    </div>
+</body>
+</html>
